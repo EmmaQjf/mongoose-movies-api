@@ -1,10 +1,11 @@
 const express = require('express')
 const app = express()
-const movieRouter = require('./routes/moviesRouter')
-const performerRouter = require('./routes/performersRouter')
+const Movie = require('./Movie')
+const Performer = require('./Performer')
+
 
 app.use(express.json())
-app.use('/movies', movieRouter)
-app.use('/performers', performerRouter)
+app.use('/movies', Movie.router)
+app.use('/performers', Performer.router)
 
 module.exports = app
